@@ -1,0 +1,102 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin()
+
+" Navigation
+Plug 'terryma/vim-multiple-cursors/'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" UI
+Plug 'vim-airline/vim-airline'
+
+" Syntax
+Plug 'othree/yajs.vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" Search
+Plug 'kien/ctrlp.vim'
+
+" Helpers
+Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ternjs/tern_for_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" You can change color scheme in .vim/colors
+
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Show number
+set number
+
+" highlight matches
+set hlsearch
+
+" search as characters are entered
+set incsearch
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf-8
+
+" Set utf8 to encoding files
+set fileencoding=utf-8
+
+" Enable syntax highlighting
+syntax on
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set noswapfile
+
+" show command in bottom bar
+set showcmd
+
+" 1 tab == 2 spaces
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Editing mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Enable use buffers in airline
+let g:airline#extensions#tabline#enabled = 1
+
+"Highlight jsx syntax
+let g:javascript_plugin_flow = 1
+
+" JSX
+let g:jsx_ext_required = 0
+
+"Snippets leader key <C-T> (CTRL + T)
+let g:UltiSnipsExpandTrigger="<C-T>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"Dante theme
+colorscheme desert
+
+"highlight YouCompleteMe prevew window
+highlight Pmenu ctermfg=0 ctermbg=40 guifg=#ffff00 guibg=#000000
+
+"Locate buffers leader key <C-V> (CTRL + T)
+nnoremap <C-V> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
+"Open treetoggle
+map <C-b> :NERDTreeToggle<CR>
+
+
